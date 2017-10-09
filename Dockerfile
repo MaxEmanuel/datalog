@@ -4,21 +4,23 @@ MAINTAINER Henrik Mühe <henrik.muehe@gmail.com>
 RUN apt-get update
 
 # Install node and some tools
-RUN apt-get install -y git nodejs npm tmux unzip wget && \
+RUN apt-get install -y git nodejs npm tmux unzip wget htop && \
         ln -s /usr/bin/nodejs /usr/bin/node
 
 # Install swi-pl
-RUN cd /tmp && \
-        wget http://www.swi-prolog.org/download/stable/src/pl-6.6.6.tar.gz && \
-        tar zxf pl-6.6.6.tar.gz && \
-        cd /tmp/pl-6.6.6 && \
-        ./configure --prefix=/opt/swi-prolog && \
-        make && make install
+RUN apt-get update -qq \
+    && apt-get install -y \
+       software-properties-common \
+       swi-prolog \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+
 
 # Install des
 RUN cd /tmp && wget https://downloads.sourceforge.net/project/des/des/des5.0.1/DES5.0.1SWI.zip  && \
         cd /opt && unzip /tmp/DES5.0.1SWI.zip && \
-        cd /opt/des && echo '/opt/swi-prolog/bin/swipl -g "ensure_loaded(des)"' >> des && chmod 755 des
+        cd /opt/des && echo 'swipl -g "ensure_loaded(des)"' >> des && chmod 755 des
 
 # Install src and modules
 COPY ./src /src/src/
