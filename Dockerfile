@@ -36,4 +36,5 @@ WORKDIR /home/dockeruser
 
 # Run
 EXPOSE 8080
+ENV TERM=xterm
 CMD ["/src/startup.sh"]
