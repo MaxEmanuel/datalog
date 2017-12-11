@@ -129,5 +129,28 @@ this.examples=[
 			"indirekt(V,N) :- bidirekt(V,X,_),indirekt(X,N), N\\=V."
 		],
 		"query": "indirekt(garching,trudering)"
+	},
+	{
+		"name": "Bauteile",
+		"description": "Bauteile von Autos.",
+		"source": "",
+		"ruleset": [
+			"bauteil(auto,1500,kb).",
+			"bauteil(fahrgestell,15,ka).",
+			"bauteil(b,20,kb).",
+			"bauteil(aa,5,kb).",
+			"bauteil(ab,5,ka).",
+			"bauteil(aaa,1,ka).",
+			"bauteil(aab,2,kc).",
+			"konstrukteur(ka,phildunphy,1970).",
+			"konstrukteur(kb,jaypritchett,1948).",
+			"konstrukteur(kc,schmidt,2000).",
+			"besteht_aus(auto,fahrgestell).",
+			"besteht_aus(fahrgestell,aa,1).",
+			"besteht_aus(fahrgestell,ab,1).",
+			"besteht_aus(aa,aaa,1).",
+			"besteht_aus(aa,aab,1).",
+		],
+		"query": "bauteil(A,B,C)"
 	}
 ]
