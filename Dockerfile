@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Henrik Mühe <henrik.muehe@gmail.com>
+MAINTAINER Maximilian E. Schüle <m.schuele@tum.de>
 
 RUN apt-get update
 
