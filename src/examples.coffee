@@ -86,6 +86,29 @@ this.examples=[
 		"query": "kindEltern(zeus,leto,KIND)"
 	},
 	{
+		"name": "Autos",
+		"description": "Brumm Brumm.",
+		"source": "&Uml;bung zur Vorlesung",
+		"ruleset": [
+			"bauteil(auto,1500,kb).",
+			"bauteil(fahrgestell,15,ka).",
+			"bauteil(b,20,kb).",
+			"bauteil(aa,5,kb).",
+			"bauteil(ab,5,ka).",
+			"bauteil(aaa,1,ka).",
+			"bauteil(aab,2,kc).",
+			"konstrukteur(ka,phildunphy,1970).",
+			"konstrukteur(kb,jaypritchett,1948).",
+			"konstrukteur(kc,schmidt,2000).",
+			"besteht_aus(auto,fahrgestell).",
+			"besteht_aus(fahrgestell,aa,1).",
+			"besteht_aus(fahrgestell,ab,1).",
+			"besteht_aus(aa,aaa,1).",
+			"besteht_aus(aa,aab,1)."
+		],
+		"query": "bauteil(A,B,C)"
+	},
+	{
 		"name": "Segler-Boots-Reservierung",
 		"description": "Schon gesegelt?",
 		"source": "&Uml;bung zur Vorlesung",
@@ -187,21 +210,21 @@ this.examples=[
 		"description": "Teile eines Rechners.",
 		"source": "http://people.inf.elte.hu/sila/DB1English/exercise06_products.pdf",
 		"ruleset": [
-			"ModelParts(workstation,mainboard-hl7).",
-			"ModelParts(workstation,hdd30g).",
-			"Part(mainboard-hl7,asuz).",
-			"Part(gpu7700,nvidio).",
-			"Part(hdd30g,sealgate).",
-			"Part(transistor,foxcom).",
-			"Part(motor,enginesUnited).",
-			"Part(wire,theWireCompany).",
-			"Part(magnet,theMagnetCompany).",
-			"ConsistsOf(hdd30g,transistor).",
-			"ConsistsOf(hdd30g,motor).",
-			"ConsistsOf(motor,wire).",
-			"ConsistsOf(motor,magnet)."
+			"modelParts(workstation,mainboard-hl7).",
+			"modelParts(workstation,hdd30g).",
+			"part(mainboard-hl7,asuz).",
+			"part(gpu7700,nvidio).",
+			"part(hdd30g,sealgate).",
+			"part(transistor,foxcom).",
+			"part(motor,enginesUnited).",
+			"part(wire,theWireCompany).",
+			"part(magnet,theMagnetCompany).",
+			"consistsOf(hdd30g,transistor).",
+			"consistsOf(hdd30g,motor).",
+			"consistsOf(motor,wire).",
+			"consistsOf(motor,magnet)."
 		],
-		"query": "ModelParts(A,B)"
+		"query": "modelParts(A,B)"
 	},
 	{
 		"name": "Muencher U-Bahn (U1, U2, U3, U4, U5 und U6)",
