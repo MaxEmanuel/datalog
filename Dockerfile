@@ -1,10 +1,8 @@
 FROM ubuntu:16.04
 MAINTAINER Maximilian E. Schüle <m.schuele@tum.de>
 
-RUN apt-get update
-
 # Install node and some tools
-RUN apt-get install -y git nodejs npm tmux unzip wget htop && \
+RUN apt-get update && apt-get install -y git nodejs npm tmux unzip wget htop && \
         ln -s /usr/bin/nodejs /usr/bin/node
 
 # Install swi-pl
@@ -14,8 +12,6 @@ RUN apt-get update -qq \
        swi-prolog \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-
-
 
 # Install des
 RUN cd /tmp && wget https://downloads.sourceforge.net/project/des/des/des5.0.1/DES5.0.1SWI.zip  && \
