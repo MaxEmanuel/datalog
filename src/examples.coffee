@@ -125,6 +125,7 @@ this.examples=[
 			"segler(8,sergiu,10,28).",
 			"segler(9,'Lubber',7,19).",
 			"segler(10,'Horatio',8,14).",
+			"segler(11,'Horatio',1,10).",
 			"%boot(BID,BNAME,FARBE)",
 			"boot(100,ferry,red).",
 			"boot(101,sun,red).",
