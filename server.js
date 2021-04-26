@@ -45,7 +45,7 @@ app.post('/datalog', function (req, res) {
   // validate user input
   // WARNING: Don't allow forward slashes!
   req.assert('ruleset', 'required').notEmpty();
-  req.assert('ruleset', 'max. 4096 characters allowed').len(0, 4096);
+  req.assert('ruleset', 'max. 6000 characters allowed').len(0, 6000);
   req.assert('ruleset', 'ruleset contains unallowed characters').matches(/^([_=:'\-\+<>\s\w\d\n\(\)%,;\.]|\\=)+$/);
 
   req.assert('query', 'required').notEmpty();
