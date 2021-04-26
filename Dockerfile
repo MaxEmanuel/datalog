@@ -1,9 +1,9 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 MAINTAINER Maximilian E. Schüle <m.schuele@tum.de>
 
+ENV DEBIAN_FRONTEND noninteractive
 # Install node and some tools
-RUN apt-get update && apt-get install -y git nodejs npm tmux unzip wget htop && \
-        ln -s /usr/bin/nodejs /usr/bin/node
+RUN apt-get update && apt-get install -y git nodejs npm tmux unzip wget htop g++ make basex openjdk-11-jdk libjing-java libxml-commons-resolver1.1-java libjline-java
 
 # Install swi-pl
 RUN apt-get update -qq \
