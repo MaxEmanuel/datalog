@@ -4,5 +4,5 @@
 	"desDirectory": "/opt/des/",
 	"examplesDirectory": "examples",
 	"tempDirectory": "/tmp",
-	"desTimeLimitMillis": 5000
+	"desTimeLimitMillis": 10000
 }
